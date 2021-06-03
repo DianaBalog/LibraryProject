@@ -1,0 +1,52 @@
+<mvc:View
+
+    controllerName="org.ubb.books.controller.Borrow"
+
+    xmlns="sap.m"
+
+    xmlns:mvc="sap.ui.core.mvc"
+
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+
+    xmlns:smartTable="sap.ui.comp.smarttable"
+
+    height="100%">
+
+
+<smartFilterBar:SmartFilterBar id="smartFilterBar"
+
+            entitySet="BooksSet">
+
+            <smartFilterBar:layoutData>
+
+                <FlexItemData shrinkFactor="0" />
+
+            </smartFilterBar:layoutData>
+
+        </smartFilterBar:SmartFilterBar>
+
+    <VBox fitContainer="false" height="600px">
+
+        <smartTable:SmartTable entitySet="BooksSet" id="idBorrowTable"
+
+            smartFilterId="smartFilterBar" 
+
+            useVariantManagement="false" useTablePersonalisation="true" header="BooksSet"
+
+            showRowCount="true" 
+
+            enableAutoBinding="true" class="sapUiResponsiveContentPadding" enableAutoColumnWidth="true"
+
+            initiallyVisibleFields="Isbn,Title,Author,TotalNumberBooks,AvailableBooks,DatePublished,Language">
+
+            <smartTable:layoutData>
+
+                <FlexItemData growFactor="1" baseSize="0%" />
+
+            </smartTable:layoutData>
+
+        </smartTable:SmartTable>
+
+    </VBox>
+
+</mvc:View>
